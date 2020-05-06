@@ -14,9 +14,12 @@ for i in range(len(inforeaded)):
 
 
 every_country_points = []
-for counting in range(1, len(inforeaded)):
-    temp_var = 0
-    for counting_next in range(1, int(number_of_countries[0])):
-        temp_var += int(inforeaded[counting_next][counting])
-    every_country_points.append(temp_var)
-print(every_country_points)
+points_of_every_country = [[k+1, 0] for k in range(int(number_of_countries[0]))]
+print(points_of_every_country)
+
+for counting in range(1, len(inforeaded)+1):
+    temp_var = []
+    for counting_next in range(int(number_of_countries[0])):
+        temp_var.append(int(inforeaded[counting_next][counting]))
+    print(temp_var)
+
