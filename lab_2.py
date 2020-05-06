@@ -6,16 +6,17 @@ with open("testing_new.csv", "r") as csvfile:
         inforeaded[k] = list(map(lambda s: s.strip(), inforeaded[k]))
     while '' in inforeaded[0]:
         inforeaded[0].remove('')
-    for i in range(len(inforeaded)):
-        print(inforeaded[i])
 
 
-moving_to_next = 0
-for k in range(len(inforeaded)):
-    while str in inforeaded[k]:
-        inforeaded[k][moving_to_next] = int(inforeaded[k][moving_to_next])
-        # if TypeError:
-        #    continue
-        moving_to_next += 1
-    moving_to_next = 0
-print(inforeaded)
+number_of_countries = inforeaded.pop(0)
+for i in range(len(inforeaded)):
+    print(inforeaded[i])
+
+
+every_country_points = []
+for counting in range(1, len(inforeaded)):
+    temp_var = 0
+    for counting_next in range(1, int(number_of_countries[0])):
+        temp_var += int(inforeaded[counting_next][counting])
+    every_country_points.append(temp_var)
+print(every_country_points)
