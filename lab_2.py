@@ -9,17 +9,25 @@ with open("testing_new.csv", "r") as csvfile:
 
 
 number_of_countries = inforeaded.pop(0)
-for i in range(len(inforeaded)):
-    print(inforeaded[i])
-
-
-every_country_points = []
-points_of_every_country = [[k+1, 0] for k in range(int(number_of_countries[0]))]
-print(points_of_every_country)
+# for i in range(len(inforeaded)):
+#     print(inforeaded[i])
+countries = []
+for k in range(len(inforeaded)):
+    countries.append(inforeaded[k][0])
+print(countries)
+points_of_every_country = [[countries[k], 0] for k in range(int(number_of_countries[0]))]
+# print(points_of_every_country)
 
 for counting in range(1, len(inforeaded)+1):
-    temp_var = []
+    temp_collecting_columns = []
     for counting_next in range(int(number_of_countries[0])):
-        temp_var.append(int(inforeaded[counting_next][counting]))
-    print(temp_var)
-
+        temp_collecting_columns.append(int(inforeaded[counting_next][counting]))
+        points_of_every_country[counting_next - 1][1] += 1
+    winner_1 = max(temp_collecting_columns)
+    index_of_winner = temp_collecting_columns.index(winner_1)
+    points_of_every_country[index_of_winner][1] += 11
+    temp_collecting_columns.pop(index_of_winner)
+    winner_2 = max(temp_collecting_columns)
+    index_of_winner = temp_collecting_columns.index(winner_2)
+    points_of_every_country[index_of_winner-1][1] += 9
+print(points_of_every_country)
