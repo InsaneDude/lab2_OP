@@ -1,10 +1,10 @@
 import os
 
 
-way_to_directory = str(input("Введіть шлях до папки : "))
-files_in_dir_list = os.listdir(way_to_directory)
+way_to_directory_open = str(input("Введіть шлях до папки, де ви хочете зчитати файли : "))
+files_in_dir_list = os.listdir(way_to_directory_open)
 inforeaded = []
-os.chdir(way_to_directory)
+os.chdir(way_to_directory_open)
 for i in range(len(files_in_dir_list)):
     with open(files_in_dir_list[i], "r") as csvfile:
         for readed_now in csvfile:
@@ -34,3 +34,12 @@ for counting in range(1, len(inforeaded)+1):
     index_of_winner = temp_collecting_columns.index(winner_2)
     points_of_every_country[index_of_winner-1][1] += 9
 print(points_of_every_country)
+
+
+# way_to_directory_save = str(input("Введіть шлях до папки, де ви хочете зберегти файл : "))
+with open("way_to_directory_save.csv", "w") as output_file:
+    for k in range(len(inforeaded)):
+        output_file.write(str(points_of_every_country[k][0])), output_file.write(";")
+    output_file.write("\n")
+    for z in range(len(inforeaded)):
+        output_file.write(str(points_of_every_country[z][1])), output_file.write(";")
