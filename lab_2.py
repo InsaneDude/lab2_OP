@@ -15,15 +15,14 @@ inforeaded.sort()
 for checking_array in range(int(len(inforeaded)/2)):
     inforeaded.pop(0)
 
-
 number_of_countries = len(inforeaded)
 countries = []
 for k in range(len(inforeaded)):
     countries.append(inforeaded[k][0])
 points_of_every_country = [[countries[k], 0] for k in range(number_of_countries)]
-for counting in range(1, len(inforeaded)+1):
+for counting in range(1, len(inforeaded[0])):
     temp_collecting_columns = []
-    for counting_next in range(number_of_countries):
+    for counting_next in range(len(inforeaded)):
         temp_collecting_columns.append(int(inforeaded[counting_next][counting]))
         points_of_every_country[counting_next - 1][1] += 1
     winner_1 = max(temp_collecting_columns)
@@ -43,3 +42,4 @@ with open("final_result.csv", "w") as output_file:
     output_file.write("\n")
     for z in range(len(inforeaded)):
         output_file.write(str(points_of_every_country[z][1])), output_file.write(";")
+print("Файл знаходиться в", r"C:\Users\insane_dude\Documents\GitHub\lab2_OP\yay_final_result")
