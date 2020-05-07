@@ -12,8 +12,9 @@ for i in range(len(files_in_dir_list)):
         for k in range(len(inforeaded)):
             inforeaded[k] = list(map(lambda s: s.strip(), inforeaded[k]))
 inforeaded.sort()
-for checking_array in range(int(len(inforeaded)/2)):
+for checking_array in range(int(round(len(inforeaded)/2))):
     inforeaded.pop(0)
+
 
 number_of_countries = len(inforeaded)
 countries = []
