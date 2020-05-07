@@ -36,8 +36,8 @@ for counting in range(1, len(inforeaded)+1):
 print(points_of_every_country)
 
 
-# way_to_directory_save = str(input("Введіть шлях до папки, де ви хочете зберегти файл : "))
-with open("way_to_directory_save.csv", "w") as output_file:
+os.chdir(r"C:\Users\insane_dude\Documents\GitHub\lab2_OP\yay_final_result")
+with open("final_result.csv", "w") as output_file:
     for k in range(len(inforeaded)):
         output_file.write(str(points_of_every_country[k][0])), output_file.write(";")
     output_file.write("\n")
