@@ -35,11 +35,11 @@ for counting in range(1, len(inforeaded[0])):
 print(points_of_every_country)
 
 
-os.chdir(r"C:\Users\insane_dude\Documents\GitHub\lab2_OP\yay_final_result")
+os.chdir(str(input("Введіть шлях, де ви хочете збегерти файл : ")))
 with open("final_result.csv", "w") as output_file:
     for k in range(len(inforeaded)):
         output_file.write(str(points_of_every_country[k][0])), output_file.write(";")
     output_file.write("\n")
     for z in range(len(inforeaded)):
         output_file.write(str(points_of_every_country[z][1])), output_file.write(";")
-print("Файл знаходиться в", r"C:\Users\insane_dude\Documents\GitHub\lab2_OP\yay_final_result")
+print("Файл знаходиться у вказаній вами папці.")
